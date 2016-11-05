@@ -1,0 +1,9 @@
+def read_csv_file_from_github_repo(filename):
+    base_github_repo_url = 'https://raw.githubusercontent.com/umbrae/reddit-top-2.5-million/master/data/'
+    url = os.path.join(base_github_repo_url, filename)
+
+    r = requests.get(url, stream=True)
+    with open(filename, 'wb') as fname:
+        for chunk in r.iter_content(chunk_size=1024):
+            if chunk:  # filter out keep-alive new chunks
+                fname.write(chunk)

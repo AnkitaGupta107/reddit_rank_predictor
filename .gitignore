@@ -1,0 +1,10 @@
+.idea/
+db.sqlite3
+*.py[co]
+*.egg
+*.egg-info
+dist
+build
+eggs
+*.pyc
+
